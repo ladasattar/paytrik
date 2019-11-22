@@ -1,0 +1,121 @@
+body, .main-content {
+	background: #FFF !important;
+	padding: 0;
+	margin: 0;
+}
+
+.page-container {
+	padding: 0;
+}
+
+.top-banner {
+	width: 100%;
+}
+
+.top-banner img {
+	width: 130px;
+}
+
+.top-banner p {
+	font-family: "Raleway ExtraBold";
+	font-size: 20px;
+	color: #333;
+	margin: 20px 0;
+}
+
+.card-wrapper {
+	width: 100%;
+	max-width: 1200px;
+	margin: 20px auto;
+}
+
+.nav-pills li {
+	margin: 0 30px;
+}
+
+.nav-link {color: #333}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+	background: transparent;
+	color: #056bb8
+}
+
+.icon-tabs {
+	margin-right: 5px;
+	font-size: 15px;
+}
+
+.tab-tagihan {
+	line-height: 28px;
+	color: #333;
+}
+
+.header-tagihan {
+	line-height: 28px;
+}
+
+.card {
+	overflow: hidden;
+}
+
+.card table.table {
+	width: 100%;
+	white-space: nowrap;
+	overflow-x: scroll;
+}
+
+.btn-destroy {
+	position: fixed;
+	top: 32%;
+	left: -2px;
+	padding: 8px 10px;
+	border-radius: 3px;
+	background: #12172D;
+	font-size: 17px;
+	z-index: 999;
+}
+
+.tab-tagihan {
+	display: none;
+}
+
+.tab-current {
+	display: block;
+}
+
+.nav-detil {
+	background: #12172D;
+	border-radius: 5px;
+}
+
+a.nav-detil-menu {
+	color: #FFF;
+	margin: 0 40px;
+	padding: 3px 0;
+	transition: .3s;
+}
+
+a.nav-detil-menu:hover {
+	font-weight: bold;
+	color: #12172D;
+	background: #FFF;
+	padding: 3px 15px;
+	border-radius: 30px;
+}
+
+a.active-detil-menu {
+	font-weight: bold;
+	color: #12172D;
+	background: #FFF;
+	padding: 3px 15px;
+	border-radius: 30px;
+}
+
+.btn-bayar-tagihan {
+	background: #12172D;
+	color: #FFF;
+	font-weight: 600;
+	font-size: 16px;
+	border-radius: 5px;
+	padding: 10px 75px;
+}
