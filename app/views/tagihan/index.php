@@ -19,6 +19,7 @@
 							<thead>
 								<tr>
 									<th>ID Tagihan</th>
+									<th>Nama</th>
 									<th>Tagihan Per</th>
 									<th>Pemakaian Akhir (Kilowatt)</th>
 									<th>Tarif /kWh</th>
@@ -37,6 +38,7 @@
 										?>
 											<tr>
 												<td><?= $tagihan['kodetagihan'] ?></td>
+												<td><?= $tagihan['nama'] ?></td>
 												<td><?= ucwords($tagihan['bulantagihan']) ?></td>
 												<td><?= $tagihan['pemakaianakhir'] ?></td>
 												<td>Rp.<?= number_format($tagihan['tarifperkwh']) ?></td>

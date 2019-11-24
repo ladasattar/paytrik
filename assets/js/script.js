@@ -103,4 +103,43 @@ $(function () {
 		$('#previewHolder').css('display', 'block');
 		readURL(this);
 	});
+
+	// Ajax Bayar Form
+	function load_unseen_notification(view = '') {
+		$.ajax({
+			url: "http://localhost/paytrik/admin/notification",
+			method: "POST",
+			data: { view: view },
+			dataType: "json",
+			success: function (data) {
+				$(".notifi-dropdown").html(data.notification);
+				if (data.unseen_notification > 0) {
+					$('.notificationQuantity').addClass('showNotificationQuantity');
+					$(".notificationQuantity").html(data.unseen_notification);
+				}
+			},
+			error: function (data) {
+				console.log("its error man");
+			}
+		})
+	}
+
+	load_unseen_notification();
+
+	$('.notifi__item').on('click', function () {
+		location.href = 'sdaflsd';
+	})
+
+	$('.notificationIcon').on('click', function () {
+		$('.notificationQuantity').html('0');
+		setTimeout(function () {
+			$('.notificationQuantity').removeClass('showNotificationQuantity');
+		}, 100);
+		load_unseen_notification('yes');
+	})
+
+	// load new notifications
+	setInterval(function () {
+		load_unseen_notification();;
+	}, 3000);
 })

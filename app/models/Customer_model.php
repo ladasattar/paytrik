@@ -176,7 +176,7 @@ class Customer_model {
 		$newFilename = $newFilename.uniqid().'.'.$extension;
 		$dir = "C:\\xampp\\htdocs\\paytrik\\assets\\images\\uploaded\\bukti\\";
 		if (move_uploaded_file($sourcePath,$dir.$newFilename)) {
-			$query = "INSERT INTO tb_pembayaran VALUES ('', '$id', CURRENT_TIMESTAMP, $pemakaian, $totalbayar, '$newFilename', 'Menunggu Konfirmasi')";
+			$query = "INSERT INTO tb_pembayaran VALUES ('', '$id', CURRENT_TIMESTAMP, $pemakaian, $totalbayar, '$newFilename', 'Menunggu Konfirmasi', '0')";
 			$this->db->query($query);
 			$this->db->execute();
 			$row = $this->db->rowCount();

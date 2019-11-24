@@ -38,7 +38,7 @@ class Pembayaran_model {
 
 	public function confirmTagihan($id)
 	{
-		$query = "UPDATE tb_pembayaran JOIN tb_tagihan USING (kodetagihan) SET statuspembayaran = 'Terkonfirmasi', status = 'lunas' WHERE kodepembayaran = :kodepembayaran";
+		$query = "UPDATE tb_pembayaran JOIN tb_tagihan USING (kodetagihan) SET statuspembayaran = 'Terkonfirmasi', status = 'lunas', notification = 1 WHERE kodepembayaran = :kodepembayaran";
 		$this->db->query($query);
 		$this->db->bind('kodepembayaran', $id);
 		$this->db->execute();

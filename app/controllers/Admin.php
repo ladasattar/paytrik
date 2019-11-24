@@ -21,4 +21,9 @@ class Admin extends Controller {
 		$this->view('admin/index', $data);
 		$this->view('templates/footer');
 	}
+
+	public function notification()
+	{
+		echo json_encode($this->model('Fetch_model')->getNotification($_POST['view']));
+	}
 }

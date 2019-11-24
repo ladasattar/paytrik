@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 21, 2019 at 12:31 PM
+-- Generation Time: Nov 24, 2019 at 03:20 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.4
 
@@ -80,18 +80,22 @@ CREATE TABLE `tb_pembayaran` (
   `pemakaian` varchar(30) NOT NULL,
   `totaldibayar` varchar(30) NOT NULL,
   `buktipembayaran` varchar(255) NOT NULL,
-  `statuspembayaran` varchar(30) NOT NULL
+  `statuspembayaran` varchar(30) NOT NULL,
+  `notification` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tb_pembayaran`
 --
 
-INSERT INTO `tb_pembayaran` (`kodepembayaran`, `kodetagihan`, `tglbayar`, `pemakaian`, `totaldibayar`, `buktipembayaran`, `statuspembayaran`) VALUES
-(6, 17, '2019-11-21 01:56:27', '100', '137700', 'img0015dd5eea220b25.jpg', 'Terkonfirmasi'),
-(7, 17, '2019-11-21 01:57:26', '150', '205300', 'img0015dd5eefe8a4c9.jpg', 'Terkonfirmasi'),
-(8, 17, '2019-11-21 02:05:27', '50', '70100', 'smartphone-015dd5f0da080a0.png', 'Terkonfirmasi'),
-(9, 18, '2019-11-21 09:55:57', '50', '75850', 'img0015dd65f0f3c65f.jpg', 'Terkonfirmasi');
+INSERT INTO `tb_pembayaran` (`kodepembayaran`, `kodetagihan`, `tglbayar`, `pemakaian`, `totaldibayar`, `buktipembayaran`, `statuspembayaran`, `notification`) VALUES
+(6, 17, '2019-11-24 03:35:33', '100', '137700', 'img0015dd5eea220b25.jpg', 'Terkonfirmasi', 1),
+(7, 17, '2019-11-24 03:35:33', '150', '205300', 'img0015dd5eefe8a4c9.jpg', 'Terkonfirmasi', 1),
+(8, 17, '2019-11-24 09:55:17', '50', '70100', 'smartphone-015dd5f0da080a0.png', 'Terkonfirmasi', 1),
+(9, 18, '2019-11-24 09:55:17', '50', '75850', 'img0015dd65f0f3c65f.jpg', 'Terkonfirmasi', 1),
+(10, 17, '2019-11-24 09:55:17', '100', '137700', 'IMG_20190605_1902005dd9fc4353a50.jpg', 'Terkonfirmasi', 1),
+(11, 17, '2019-11-24 09:56:50', '100121', '135366092', 'img0015dda0948ca8ff.jpg', 'Terkonfirmasi', 1),
+(12, 18, '2019-11-24 14:19:51', '560', '824020', 'img0015dda540a46676.jpg', 'Terkonfirmasi', 1);
 
 -- --------------------------------------------------------
 
@@ -118,8 +122,8 @@ CREATE TABLE `tb_tagihan` (
 --
 
 INSERT INTO `tb_tagihan` (`kodetagihan`, `kodepelanggan`, `tahuntagihan`, `bulantagihan`, `pemakaianakhir`, `tglpencatatan`, `totalbayar`, `tglmulaibayar`, `tglakhirbayar`, `status`, `keterangan`) VALUES
-(17, 29, '2019', 'November', '50', '2019-11-21 02:05:27', '70100', '2019-11-21', '2019-11-21', 'lunas', ''),
-(18, 30, '2019', 'November', '50', '2019-11-21 09:55:57', '75850', '2019-11-21', '2019-11-21', 'lunas', '');
+(17, 29, '2019', 'November', '100121', '2019-11-24 09:56:50', '135366092', '2019-11-24', '2019-11-24', 'lunas', ''),
+(18, 30, '2019', 'November', '560', '2019-11-24 14:19:51', '824020', '2019-11-24', '2019-11-24', 'lunas', '');
 
 -- --------------------------------------------------------
 
@@ -199,7 +203,7 @@ ALTER TABLE `tb_pelanggan`
 -- AUTO_INCREMENT for table `tb_pembayaran`
 --
 ALTER TABLE `tb_pembayaran`
-  MODIFY `kodepembayaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `kodepembayaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `tb_tagihan`
