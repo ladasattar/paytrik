@@ -43,12 +43,33 @@ class Customer_model {
 		return $this->db->rowCount();
 	}
 
-	// public function countCustomer()
-	// {
-	// 	$this->db->query("SELECT COUNT(*) FROM " . $this->table);
-	// 	$this->db->execute();
-	// 	return $this->db->single();
-	// }
+	public function countCustomer()
+	{
+		$this->db->query("SELECT COUNT(*) AS total FROM " . $this->table);
+		$this->db->execute();
+		return $this->db->single();
+	}
+
+	public function countConfirmed()
+	{
+		$this->db->query("SELECT COUNT(*) AS total FROM tb_pembayaran WHERE statuspembayaran = 'Terkonfirmasi'");
+		$this->db->execute();
+		return $this->db->single();
+	}
+
+	public function countNotConfirmed()
+	{
+		$this->db->query("SELECT COUNT(*) AS total FROM tb_pembayaran WHERE statuspembayaran = 'Menunggu Konfirmasi'");
+		$this->db->execute();
+		return $this->db->single();
+	}
+
+	public function totalEarnings()
+	{
+		$this->db->query("SELECT SUM(totaldibayar) FROM tb_pembayaran");
+		$this->db->execute();
+		return $this->db->single();
+	}
 
 	public function getDataCustomer()
 	{

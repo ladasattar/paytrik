@@ -18,7 +18,15 @@
                                                 <i class="zmdi zmdi-account-o"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>1000</h2>
+                                                <?php
+                                                    if (!empty($data['admin'])) {
+                                                        foreach ($data['admin'] as $customer) {
+                                                            ?>
+                                                                <h2><?= $customer ?></h2>
+                                                            <?php
+                                                        }
+                                                    }
+                                                ?>
                                                 <span>Pelanggan</span>
                                             </div>
                                         </div>
@@ -36,8 +44,16 @@
                                                 <i class="zmdi zmdi-file-text"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>388,688</h2>
-                                                <span>items solid</span>
+                                                <?php
+                                                    if (!empty($data['confirmed'])) {
+                                                        foreach ($data['confirmed'] as $confirmed) {
+                                                            ?>
+                                                                <h2><?= $confirmed ?></h2>
+                                                            <?php
+                                                        }
+                                                    }
+                                                ?>
+                                                <span>Terkonfirmasi</span>
                                             </div>
                                         </div>
                                         <div class="overview-chart">
@@ -54,8 +70,16 @@
                                                 <i class="zmdi zmdi-file-text"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>1,086</h2>
-                                                <span>this week</span>
+                                                <?php
+                                                    if (!empty($data['not-confirmed'])) {
+                                                        foreach ($data['not-confirmed'] as $notConfirmed) {
+                                                            ?>
+                                                                <h2><?= $notConfirmed ?></h2>
+                                                            <?php
+                                                        }
+                                                    }
+                                                ?>
+                                                <span>Menunggu Konfirmasi</span>
                                             </div>
                                         </div>
                                         <div class="overview-chart">
@@ -72,8 +96,16 @@
                                                 <i class="zmdi zmdi-money"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>$1,060,386</h2>
-                                                <span>total earnings</span>
+                                                <?php
+                                                    if (!empty($data['earnings'])) {
+                                                        foreach ($data['earnings'] as $totalEarnings) {
+                                                            ?>
+                                                                <h2>Rp.<?= number_format($totalEarnings) ?></h2>
+                                                            <?php
+                                                        }
+                                                    }
+                                                ?>
+                                                <span>Total Pemasukan</span>
                                             </div>
                                         </div>
                                         <div class="overview-chart">
