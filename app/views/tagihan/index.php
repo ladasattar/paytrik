@@ -75,10 +75,6 @@
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
-</div>
-<!-- END MAIN CONTENT-->
 
 
 <!-- modal medium -->
