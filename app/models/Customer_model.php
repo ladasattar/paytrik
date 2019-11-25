@@ -110,7 +110,7 @@ class Customer_model {
 		$row = $this->db->rowCount();
 
 		if ($row < 1) {
-			$query = "INSERT INTO tb_pelanggan VALUES ('', :nometer, :kodetarif, :nama, :tlp, :alamat)";
+			$query = "INSERT INTO " . $this->table . " VALUES ('', :nometer, :kodetarif, :nama, :tlp, :alamat)";
 			$this->db->query($query);
 			$this->db->bind('nama', $data['nama']);
 			$this->db->bind('nometer', $data['nometer']);
@@ -123,7 +123,7 @@ class Customer_model {
 			$currentYear = date("Y");
 			$currentMonth = date("F");
 			if ($row > 0) {
-				$query = "INSERT INTO tb_tagihan VALUES ('', $id, $currentYear, '$currentMonth', 0, '', 0, '', '', '', '')";
+				$query = "INSERT INTO tb_tagihan VALUES ('', $id, $currentYear, '$currentMonth', 0, 0, '', 0, '', '', '', '')";
 				$this->db->query($query);
 				$this->db->execute();
 				return $this->db->rowCount();

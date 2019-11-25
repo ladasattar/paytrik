@@ -46,7 +46,6 @@ $(function () {
 		$('.btn-edit').html('<i class="zmdi zmdi-edit"></i>edit');
 
 		const id = $(this).data('id');
-		// const tarifperkwh = $(this).data('tarif');
 
 		$.ajax({
 			url: 'http://localhost/paytrik/tagihan/getEdit',
@@ -61,6 +60,27 @@ $(function () {
 	})
 
 	// Tarif
+	$('.btnInsertTarif').on('click', function () {
+		$('h5.modal-title').html('Tambah Tarif');
+		$('.modal-body form').attr('action', 'http://localhost/paytrik/tarif/action');
+		$('.btn-edit').html('<i class="zmdi zmdi-edit"></i>edit');
+
+		const id = $(this).data('id');
+
+		$.ajax({
+			url: 'http://localhost/paytrik/tarif/getEdit',
+			data: { kodetarif: id },
+			method: 'post',
+			dataType: 'json',
+			success: function (data) {
+				$("#goltarif").val("");
+				$("#daya").val("");
+				$("#tarifperkwh").val("");
+				$("#beban").val("");
+				$("#id").val("");
+			}
+		});
+	})
 
 	$('.showEditTarif').on('click', function () {
 		$('h5.modal-title').html('Edit Data Tarif');

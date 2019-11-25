@@ -67,45 +67,56 @@
                                 </div>
                             </div>
                         </div>
-			
-
-			<!-- modal medium -->
-			<div class="modal fade" id="mediumModal" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true">
-				<div class="modal-dialog modal-lg" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title" id="mediumModalLabel">Tambah Pelanggan</h5>
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-						<div class="modal-body">
-							<form action="<?= BASEURL ?>/tarif/action" method="post" novalidate="novalidate">
-								<input type="hidden" name="id" id="id">
-								<div class="form-group">
-									<label for="goltarif" class="control-label mb-1">Golongan Tarif</label>
-									<input id="goltarif" name="goltarif" type="text" class="form-control" required>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="copyright">
+									<p>Copyright © <?= date('Y') ?> Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
 								</div>
-								<div class="form-group">
-									<label for="daya" class="control-label mb-1">Daya</label>
-									<input id="daya" name="daya" type="number" class="form-control" required>
-								</div>
-								<div class="form-group">
-									<label for="tarifperkwh" class="control-label mb-1">Tarif /kWh</label>
-									<input id="tarifperkwh" name="tarifperkwh" type="number" class="form-control" required>
-								</div>
-								<div class="form-group">
-									<label for="beban" class="control-label mb-1">Beban</label>
-									<input id="beban" name="beban" type="number" class="form-control" required>
-								</div>
-								<div class="modal-footer">
-									<button type="submit" class="au-btn au-btn-icon au-btn--blue btn-edit">
-										<i class="zmdi zmdi-plus"></i>tambah</button>
-									</button>
-								</div>
-							</form>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<!-- end modal medium -->
+			<!-- END MAIN CONTENT-->
+			
+
+<!-- modal medium -->
+<div class="modal fade" id="mediumModal" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="mediumModalLabel">Tambah Pelanggan</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form action="<?= BASEURL ?>/tarif/action" method="post" novalidate="novalidate">
+					<input type="hidden" name="id" id="id">
+					<div class="form-group">
+						<label for="goltarif" class="control-label mb-1">Golongan Tarif</label>
+						<input id="goltarif" name="goltarif" type="text" class="form-control" required>
+					</div>
+					<div class="form-group">
+						<label for="daya" class="control-label mb-1">Daya</label>
+						<input id="daya" name="daya" type="number" class="form-control" required>
+					</div>
+					<div class="form-group">
+						<label for="tarifperkwh" class="control-label mb-1">Tarif /kWh</label>
+						<input id="tarifperkwh" name="tarifperkwh" type="number" class="form-control" required>
+					</div>
+					<div class="form-group">
+						<label for="beban" class="control-label mb-1">Beban</label>
+						<input id="beban" name="beban" type="number" class="form-control" required>
+					</div>
+					<div class="modal-footer">
+						<button type="submit" class="au-btn au-btn-icon au-btn--blue btn-edit">
+							<i class="zmdi zmdi-plus"></i>tambah</button>
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end modal medium -->

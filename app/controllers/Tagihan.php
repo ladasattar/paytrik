@@ -35,11 +35,11 @@ class Tagihan extends Controller {
 	public function edit()
 	{
 		if ( $this->model('Tagihan_model')->editDataTagihan($_POST) > 0 ) {
-			Flasher::setFlash('Tagihan berhasil ditambahkan', 'check-circle', '');
+			Flasher::setFlash('Tagihan berhasil diubah', 'check-circle', '');
 			header('Location: ' . BASEURL . '/menu/tagihan');
 			exit;
 		} else {
-			Flasher::setFlash('Tagihan gagal ditambahkan', 'close', '#e0404f');
+			Flasher::setFlash('Tagihan gagal diubah', 'close', '#e0404f');
 			header('Location: ' . BASEURL . '/menu/tagihan');
 			exit;
 		}

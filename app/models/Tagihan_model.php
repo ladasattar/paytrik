@@ -53,11 +53,26 @@ class Tagihan_model {
 					$beban = $result['beban'];
 					$tahun = date("Y");
 					$bulan = date("F");
-					$pemakaianakhir = $_POST['pemakaianakhir'];
-					$totalbayar = ($pemakaianakhir * $tarifperkwh) + $beban;
+					$meteranakhir = $result['pemakaianakhir'];
+					echo $meteranakhir . '<br/>';
+					$meteran = $result['meteran'];
+					if ($meteranakhir != 0) {
+						echo $meteran . '<br/>';
+						$ubahmeteran = $meteranakhir;
+						$pemakaianakhir = $_POST['pemakaianakhir'];
+						$totalpemakaian = $meteranakhir - $meteran;
+						$totalbayar = ($totalpemakaian * $tarifperkwh) + $beban;
+					} else {
+						$ubahmeteran = $meteranakhir;
+						$pemakaianakhir = $_POST['pemakaianakhir'];
+						$totalpemakaian = $pemakaianakhir - $meteran;
+						$totalbayar = ($totalpemakaian * $tarifperkwh) + $beban;
+					}
+
 					$query = "UPDATE tb_tagihan SET
 								tahuntagihan = $tahun,
-								bulantagihan = '$bulan',
+								bulantagihan = '$bulan', 
+								meteran = $ubahmeteran, 
 								pemakaianakhir = :pemakaianakhir,
 								tglmulaibayar = curdate(),
 								tglakhirbayar = curdate(),

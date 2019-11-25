@@ -21,6 +21,7 @@
 									<th>ID Tagihan</th>
 									<th>Nama</th>
 									<th>Tagihan Per</th>
+									<th>Meteran</th>
 									<th>Pemakaian Akhir (Kilowatt)</th>
 									<th>Tarif /kWh</th>
 									<th>Beban</th>
@@ -40,6 +41,7 @@
 												<td><?= $tagihan['kodetagihan'] ?></td>
 												<td><?= $tagihan['nama'] ?></td>
 												<td><?= ucwords($tagihan['bulantagihan']) ?></td>
+												<td><?= $tagihan['meteran'] ?></td>
 												<td><?= $tagihan['pemakaianakhir'] ?></td>
 												<td>Rp.<?= number_format($tagihan['tarifperkwh']) ?></td>
 												<td>Rp.<?= number_format($tagihan['beban']) ?></td>
@@ -75,7 +77,17 @@
 					</div>
 				</div>
 			</div>
-
+			<div class="row">
+				<div class="col-md-12">
+					<div class="copyright">
+						<p>Copyright © <?= date('Y') ?> Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- END MAIN CONTENT-->
 
 <!-- modal medium -->
 <div class="modal fade" id="mediumModal" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true">

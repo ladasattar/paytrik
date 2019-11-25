@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 24, 2019 at 04:02 PM
+-- Generation Time: Nov 25, 2019 at 12:40 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.4
 
@@ -65,7 +65,8 @@ CREATE TABLE `tb_pelanggan` (
 
 INSERT INTO `tb_pelanggan` (`kodepelanggan`, `nometer`, `kodetarif`, `nama`, `tlp`, `alamat`) VALUES
 (29, '12345', 1, 'Muqorroba Lada Sattar', '+62895345409970', 'Jalan Tukad Yeh Panan, Blok 19, No. 32\r\nPerumnas Bukit Sanggulan, Kediri'),
-(30, '1454235', 3, 'I Made Atta', '+62895345409970', 'Jalan Tukad Yeh Panan, Blok 19, No. 32\r\nPerumnas Bukit Sanggulan, Kediri');
+(30, '1454235', 3, 'I Made Atta', '+62895345409970', 'Jalan Tukad Yeh Panan, Blok 19, No. 32\r\nPerumnas Bukit Sanggulan, Kediri'),
+(31, '235236', 1, 'Muqorroba Lada Sattar', '+62895345409970', 'Jalan Tukad Yeh Panan, Blok 19, No. 32\r\nPerumnas Bukit Sanggulan, Kediri');
 
 -- --------------------------------------------------------
 
@@ -90,7 +91,7 @@ CREATE TABLE `tb_pembayaran` (
 
 INSERT INTO `tb_pembayaran` (`kodepembayaran`, `kodetagihan`, `tglbayar`, `pemakaian`, `totaldibayar`, `buktipembayaran`, `statuspembayaran`, `notification`) VALUES
 (14, 17, '2019-11-24 14:55:44', '100', '137700', 'img0015dda99e3c554e.jpg', 'Terkonfirmasi', 1),
-(15, 18, '2019-11-24 14:57:31', '50', '75850', 'img0015dda9a5b2bb03.jpg', 'Menunggu Konfirmasi', 0);
+(15, 18, '2019-11-25 10:45:17', '50', '75850', 'img0015dda9a5b2bb03.jpg', 'Menunggu Konfirmasi', 1);
 
 -- --------------------------------------------------------
 
@@ -103,7 +104,8 @@ CREATE TABLE `tb_tagihan` (
   `kodepelanggan` int(11) NOT NULL,
   `tahuntagihan` varchar(5) NOT NULL,
   `bulantagihan` varchar(15) NOT NULL,
-  `pemakaianakhir` varchar(30) NOT NULL,
+  `meteran` varchar(50) NOT NULL,
+  `pemakaianakhir` varchar(50) NOT NULL,
   `tglpencatatan` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `totalbayar` varchar(30) NOT NULL,
   `tglmulaibayar` date NOT NULL,
@@ -116,9 +118,10 @@ CREATE TABLE `tb_tagihan` (
 -- Dumping data for table `tb_tagihan`
 --
 
-INSERT INTO `tb_tagihan` (`kodetagihan`, `kodepelanggan`, `tahuntagihan`, `bulantagihan`, `pemakaianakhir`, `tglpencatatan`, `totalbayar`, `tglmulaibayar`, `tglakhirbayar`, `status`, `keterangan`) VALUES
-(17, 29, '2019', 'November', '100', '2019-11-24 14:55:44', '137700', '2019-11-24', '2019-11-24', 'lunas', ''),
-(18, 30, '2019', 'November', '50', '2019-11-24 14:57:31', '75850', '2019-11-24', '2019-11-24', 'Menunggu Konfirmasi', '');
+INSERT INTO `tb_tagihan` (`kodetagihan`, `kodepelanggan`, `tahuntagihan`, `bulantagihan`, `meteran`, `pemakaianakhir`, `tglpencatatan`, `totalbayar`, `tglmulaibayar`, `tglakhirbayar`, `status`, `keterangan`) VALUES
+(17, 29, '2019', 'November', '0', '100', '2019-11-25 09:50:15', '137700', '2019-11-24', '2019-11-24', 'lunas', ''),
+(18, 30, '2019', 'November', '50', '100', '2019-11-25 11:37:18', '75850', '2019-11-25', '2019-11-25', 'belum lunas', ''),
+(19, 31, '2019', 'November', '10', '20', '2019-11-25 11:37:08', '16020', '2019-11-25', '2019-11-25', 'belum lunas', '');
 
 -- --------------------------------------------------------
 
@@ -142,7 +145,8 @@ INSERT INTO `tb_tarif` (`kodetarif`, `goltarif`, `daya`, `tarifperkwh`, `beban`)
 (1, 'R-0/TR', '900', '1352', '2500'),
 (2, 'R-1/TR', '1300', '1467', '2500'),
 (3, 'R-1/TR', '2200', '1467', '2500'),
-(4, 'R-2/TR', '3500', '1467', '2500');
+(4, 'R-2/TR', '3500', '1467', '2500'),
+(5, 'R-2/TR', '5500', '1467', '2500');
 
 --
 -- Indexes for dumped tables
@@ -192,7 +196,7 @@ ALTER TABLE `tb_login`
 -- AUTO_INCREMENT for table `tb_pelanggan`
 --
 ALTER TABLE `tb_pelanggan`
-  MODIFY `kodepelanggan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `kodepelanggan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `tb_pembayaran`
@@ -204,13 +208,13 @@ ALTER TABLE `tb_pembayaran`
 -- AUTO_INCREMENT for table `tb_tagihan`
 --
 ALTER TABLE `tb_tagihan`
-  MODIFY `kodetagihan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `kodetagihan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `tb_tarif`
 --
 ALTER TABLE `tb_tarif`
-  MODIFY `kodetarif` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `kodetarif` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

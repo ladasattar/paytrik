@@ -11,82 +11,88 @@
                         </div>
                         <div class="row m-t-25">
                             <div class="col-sm-6 col-lg-3">
-                                <div class="overview-item overview-item--c1">
-                                    <div class="overview__inner">
-                                        <div class="overview-box clearfix">
-                                            <div class="icon">
-                                                <i class="zmdi zmdi-account-o"></i>
-                                            </div>
-                                            <div class="text">
-                                                <?php
-                                                    if (!empty($data['admin'])) {
-                                                        foreach ($data['admin'] as $customer) {
-                                                            ?>
-                                                                <h2><?= $customer ?></h2>
-                                                            <?php
+                                <a href="<?= BASEURL ?>/menu/customer">
+                                    <div class="overview-item overview-item--c1">
+                                        <div class="overview__inner">
+                                            <div class="overview-box clearfix">
+                                                <div class="icon">
+                                                    <i class="zmdi zmdi-account-o"></i>
+                                                </div>
+                                                <div class="text">
+                                                    <?php
+                                                        if (!empty($data['admin'])) {
+                                                            foreach ($data['admin'] as $customer) {
+                                                                ?>
+                                                                    <h2><?= $customer ?></h2>
+                                                                <?php
+                                                            }
                                                         }
-                                                    }
-                                                ?>
-                                                <span>Pelanggan</span>
+                                                    ?>
+                                                    <span>Pelanggan</span>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="overview-chart">
-                                            <canvas id="widgetChart1"></canvas>
+                                            <div class="overview-chart">
+                                                <canvas id="widgetChart1"></canvas>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                             <div class="col-sm-6 col-lg-3">
-                                <div class="overview-item overview-item--c2">
-                                    <div class="overview__inner">
-                                        <div class="overview-box clearfix">
-                                            <div class="icon">
-                                                <i class="zmdi zmdi-file-text"></i>
-                                            </div>
-                                            <div class="text">
-                                                <?php
-                                                    if (!empty($data['confirmed'])) {
-                                                        foreach ($data['confirmed'] as $confirmed) {
-                                                            ?>
-                                                                <h2><?= $confirmed ?></h2>
-                                                            <?php
+                                <a href="<?= BASEURL ?>/menu/riwayat">
+                                    <div class="overview-item overview-item--c2">
+                                        <div class="overview__inner">
+                                            <div class="overview-box clearfix">
+                                                <div class="icon">
+                                                    <i class="zmdi zmdi-file-text"></i>
+                                                </div>
+                                                <div class="text">
+                                                    <?php
+                                                        if (!empty($data['confirmed'])) {
+                                                            foreach ($data['confirmed'] as $confirmed) {
+                                                                ?>
+                                                                    <h2><?= $confirmed ?></h2>
+                                                                <?php
+                                                            }
                                                         }
-                                                    }
-                                                ?>
-                                                <span>Terkonfirmasi</span>
+                                                    ?>
+                                                    <span>Terkonfirmasi</span>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="overview-chart">
-                                            <canvas id="widgetChart2"></canvas>
+                                            <div class="overview-chart">
+                                                <canvas id="widgetChart2"></canvas>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                             <div class="col-sm-6 col-lg-3">
-                                <div class="overview-item overview-item--c3">
-                                    <div class="overview__inner">
-                                        <div class="overview-box clearfix">
-                                            <div class="icon">
-                                                <i class="zmdi zmdi-file-text"></i>
-                                            </div>
-                                            <div class="text">
-                                                <?php
-                                                    if (!empty($data['not-confirmed'])) {
-                                                        foreach ($data['not-confirmed'] as $notConfirmed) {
-                                                            ?>
-                                                                <h2><?= $notConfirmed ?></h2>
-                                                            <?php
+                                <a href="<?= BASEURL ?>/menu/pembayaran">
+                                    <div class="overview-item overview-item--c3">
+                                        <div class="overview__inner">
+                                            <div class="overview-box clearfix">
+                                                <div class="icon">
+                                                    <i class="zmdi zmdi-file-text"></i>
+                                                </div>
+                                                <div class="text">
+                                                    <?php
+                                                        if (!empty($data['not-confirmed'])) {
+                                                            foreach ($data['not-confirmed'] as $notConfirmed) {
+                                                                ?>
+                                                                    <h2><?= $notConfirmed ?></h2>
+                                                                <?php
+                                                            }
                                                         }
-                                                    }
-                                                ?>
-                                                <span>Menunggu Konfirmasi</span>
+                                                    ?>
+                                                    <span>Menunggu Konfirmasi</span>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="overview-chart">
-                                            <canvas id="widgetChart3"></canvas>
+                                            <div class="overview-chart">
+                                                <canvas id="widgetChart3"></canvas>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                             <div class="col-sm-6 col-lg-3">
                                 <div class="overview-item overview-item--c4">
@@ -200,3 +206,14 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="copyright">
+                                    <p>Copyright © <?= date('Y') ?> Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END MAIN CONTENT-->

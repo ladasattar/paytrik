@@ -43,7 +43,7 @@
             <div class="header-mobile__bar">
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
-                        <a class="logo" href="<?= BASEURL ?>">
+                        <a class="logo" href="<?= BASEURL ?>/admin">
                             <img src="<?= BASEURL ?>/assets/images/icon/logo.png" alt="CoolAdmin" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
@@ -96,7 +96,7 @@
         <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
-                <a href="<?= BASEURL ?>">
+                <a href="<?= BASEURL ?>/admin">
                     <img src="<?= BASEURL ?>/assets/images/icon/logo.png" alt="Cool Admin" />
                 </a>
             </div>
