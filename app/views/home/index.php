@@ -76,8 +76,8 @@
 							<img src="assets/img/payment/payment.png">
 							<p class="title-feature">1. Transfer Pembayaran</p>
 							<p class="desc-feature">Transfer melalui bank <br />ataupun m-Banking</p>
-							<a href="javascript:void(0)">
-								<button class="btn btn-read-more">DETAIL</button>
+							<a href="javascript:void(0)" class="animatedClick" data-target='clickExample' data-sequence='500'>
+								<button class="btn btn-read-more">BACA</button>
 							</a>
 						</div><!-- /features-column -->
 					</div><!-- /col-4 -->
@@ -88,7 +88,7 @@
 							<p class="title-feature">2. Isi Formulir</p>
 							<p class="desc-feature">Mengisi formulir dengan <br />lengkap dan benar beserta bukti</p>
 							<a href="javascript:void(0)">
-								<button class="btn btn-read-more">DETAIL</button>
+								<button class="btn btn-read-more">BACA</button>
 							</a>
 						</div><!-- /features-column -->
 					</div><!-- /col-4 -->
@@ -99,7 +99,7 @@
 							<p class="title-feature">3. Tunggu Konfirmasi</p>
 							<p class="desc-feature">Admin akan mengkonfirmasi <br />dalam jangka waktu 2 x 24 jam</p>
 							<a href="javascript:void(0)">
-								<button class="btn btn-read-more">DETAIL</button>
+								<button class="btn btn-read-more">BACA</button>
 							</a>
 						</div><!-- /features-column -->
 					</div><!-- /col-4 -->
@@ -155,6 +155,29 @@
 				</div><!-- /copy-section -->
 			</div><!-- /col-12 -->
 		</footer>
+
+		<!-- modal-baca -->
+		<div class="wrapper-modal d-flex align-items-center content-center animated fadeIn clickExample fadeOut" data-id='1'>
+			<div class="modal-baca row animated bounceInUp clickExample fadeOut" data-id='2'>
+				<div class="img-modal-baca">
+					<img src="assets/img/payment/payment.png">
+				</div>
+				<h3>Transfer Pembayaran</h3>
+				<p>Transfer uang tagihan ke rekening Official Paytrik</p>
+				<div class="nama-bank">
+					<p><span class="tf-bank">BCA</span> : 032485215</p>
+					<p><span class="tf-bank">BRI</span> : 032485215</p>
+					<p><span class="tf-bank">Mandiri</span> : 032485215</p>
+				</div>
+				<div class="footer-modal-baca">
+					<a href="javascript:void(0)" class="animatedClick" data-target='clickExample' data-sequence='500'>
+						<button class="btn btn-read-more">KEMBALI</button>
+					</a>
+				</div>
+			</div>
+		</div>
+		<!-- /modal-baca -->
+
 	</div><!-- /wrapper -->
 
 	<script src="<?= BASEURL ?>/assets/js/jquery-3.3.1.min.js"></script>

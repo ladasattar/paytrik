@@ -49,6 +49,7 @@ $(function () {
 		}
 	})
 
+	// Detil
 	$('a.nav-detil-menu').on('click', function () {
 		var tabId = $(this).attr('data-tab');
 

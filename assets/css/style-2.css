@@ -918,3 +918,68 @@ p.text-offer {
 		padding: 10px 15px;
 	}
 }
+
+/* Modal baca */
+
+.wrapper-modal {
+	background: rgba(0,0,0,0.5);
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	z-index: 9999;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	transition: .3s ease-in;
+}
+
+.show-wrapper-modal {
+	opacity: 1;
+	visibility: visible;
+}
+
+.modal-baca {
+	position: absolute;
+	padding: 20px 30px;
+	background: #FFF;
+	width: 600px;
+	height: 600px;
+	border-radius: 15px;
+	transition-delay: .5s;
+}
+
+.show-modal-baca {
+	transform: translateY(0);
+}
+
+.img-modal-baca {
+	text-align: center;
+}
+
+.img-modal-baca img {
+	width: 280px;
+}
+
+.modal-baca h3 {
+	color: #056BB5;
+	font-family: "Poppins SemiBold";
+}
+
+.modal-baca p {
+	color: #555;
+	margin: 5px 0;
+	line-height: 28px;
+}
+
+.nama-bank {
+	margin: 15px 0;
+}
+
+span.tf-bank {
+	color: #056BB5;
+	font-family: "Poppins SemiBold";
+}
+
+.footer-modal-baca {
+	text-align: center;
+}
