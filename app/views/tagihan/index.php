@@ -104,7 +104,7 @@
 					<input type="hidden" name="id" id="id">
 					<div class="form-group">
 						<label for="pemakaianakhir" class="control-label mb-1">Pemakaian Akhir</label>
-						<input id="pemakaianakhir" name="pemakaianakhir" type="number" class="form-control" required>
+						<input id="pemakaianakhir" name="pemakaianakhir" type="number" class="form-control" min="0" required>
 					</div>
 					<div class="modal-footer">
 						<button type="submit" class="au-btn au-btn-icon au-btn--blue btn-edit">

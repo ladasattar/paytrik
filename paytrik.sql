@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 25, 2019 at 12:40 PM
+-- Generation Time: Nov 25, 2019 at 01:41 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.4
 
@@ -91,7 +91,8 @@ CREATE TABLE `tb_pembayaran` (
 
 INSERT INTO `tb_pembayaran` (`kodepembayaran`, `kodetagihan`, `tglbayar`, `pemakaian`, `totaldibayar`, `buktipembayaran`, `statuspembayaran`, `notification`) VALUES
 (14, 17, '2019-11-24 14:55:44', '100', '137700', 'img0015dda99e3c554e.jpg', 'Terkonfirmasi', 1),
-(15, 18, '2019-11-25 10:45:17', '50', '75850', 'img0015dda9a5b2bb03.jpg', 'Menunggu Konfirmasi', 1);
+(15, 18, '2019-11-25 12:39:53', '50', '75850', 'img0015dda9a5b2bb03.jpg', 'Terkonfirmasi', 1),
+(16, 17, '2019-11-25 12:39:55', '10', '16020', 'img0015ddbcb81af5c0.jpg', 'Terkonfirmasi', 1);
 
 -- --------------------------------------------------------
 
@@ -119,9 +120,9 @@ CREATE TABLE `tb_tagihan` (
 --
 
 INSERT INTO `tb_tagihan` (`kodetagihan`, `kodepelanggan`, `tahuntagihan`, `bulantagihan`, `meteran`, `pemakaianakhir`, `tglpencatatan`, `totalbayar`, `tglmulaibayar`, `tglakhirbayar`, `status`, `keterangan`) VALUES
-(17, 29, '2019', 'November', '0', '100', '2019-11-25 09:50:15', '137700', '2019-11-24', '2019-11-24', 'lunas', ''),
-(18, 30, '2019', 'November', '50', '100', '2019-11-25 11:37:18', '75850', '2019-11-25', '2019-11-25', 'belum lunas', ''),
-(19, 31, '2019', 'November', '10', '20', '2019-11-25 11:37:08', '16020', '2019-11-25', '2019-11-25', 'belum lunas', '');
+(17, 29, '2019', 'November', '0', '10', '2019-11-25 12:39:55', '16020', '2019-11-25', '2019-11-25', 'lunas', ''),
+(18, 30, '2019', 'November', '0', '20', '2019-11-25 12:39:53', '31840', '2019-11-25', '2019-11-25', 'lunas', ''),
+(19, 31, '2019', 'November', '0', '50', '2019-11-25 11:49:28', '70100', '2019-11-25', '2019-11-25', 'belum lunas', '');
 
 -- --------------------------------------------------------
 
@@ -202,7 +203,7 @@ ALTER TABLE `tb_pelanggan`
 -- AUTO_INCREMENT for table `tb_pembayaran`
 --
 ALTER TABLE `tb_pembayaran`
-  MODIFY `kodepembayaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `kodepembayaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `tb_tagihan`

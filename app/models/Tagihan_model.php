@@ -54,36 +54,41 @@ class Tagihan_model {
 					$tahun = date("Y");
 					$bulan = date("F");
 					$meteranakhir = $result['pemakaianakhir'];
-					echo $meteranakhir . '<br/>';
 					$meteran = $result['meteran'];
-					if ($meteranakhir != 0) {
-						echo $meteran . '<br/>';
-						$ubahmeteran = $meteranakhir;
-						$pemakaianakhir = $_POST['pemakaianakhir'];
-						$totalpemakaian = $meteranakhir - $meteran;
-						$totalbayar = ($totalpemakaian * $tarifperkwh) + $beban;
+					if ($_POST['pemakaianakhir'] > $meteran) {
+						if ($meteranakhir != 0) {
+							echo $meteran . '<br/>';
+							$ubahmeteran = $meteranakhir;
+							$pemakaianakhir = $_POST['pemakaianakhir'];
+							$totalpemakaian = $meteranakhir - $meteran;
+							$totalbayar = ($totalpemakaian * $tarifperkwh) + $beban;
+						} else {
+							$ubahmeteran = $meteranakhir;
+							$pemakaianakhir = $_POST['pemakaianakhir'];
+							$totalpemakaian = $pemakaianakhir - $meteran;
+							$totalbayar = ($totalpemakaian * $tarifperkwh) + $beban;
+						}
+	
+						$query = "UPDATE tb_tagihan SET
+									tahuntagihan = $tahun,
+									bulantagihan = '$bulan', 
+									meteran = $ubahmeteran, 
+									pemakaianakhir = :pemakaianakhir,
+									tglmulaibayar = curdate(),
+									tglakhirbayar = curdate(),
+									totalbayar = $totalbayar, 
+									status = 'belum lunas' 
+									WHERE kodetagihan = :id";
+						$this->db->query($query);
+						$this->db->bind('pemakaianakhir', $data['pemakaianakhir']);
+						$this->db->bind('id', $data['id']);
+	
+						$this->db->execute();
 					} else {
-						$ubahmeteran = $meteranakhir;
-						$pemakaianakhir = $_POST['pemakaianakhir'];
-						$totalpemakaian = $pemakaianakhir - $meteran;
-						$totalbayar = ($totalpemakaian * $tarifperkwh) + $beban;
+						Flasher::setFlash('Pemakaian akhir tidak boleh lebih kecil/sama dengan dari meteran akhir', 'close', '#e0404f');
+						header('Location: ' . BASEURL . '/menu/tagihan');
+						exit;
 					}
-
-					$query = "UPDATE tb_tagihan SET
-								tahuntagihan = $tahun,
-								bulantagihan = '$bulan', 
-								meteran = $ubahmeteran, 
-								pemakaianakhir = :pemakaianakhir,
-								tglmulaibayar = curdate(),
-								tglakhirbayar = curdate(),
-								totalbayar = $totalbayar, 
-								status = 'belum lunas' 
-								WHERE kodetagihan = :id";
-					$this->db->query($query);
-					$this->db->bind('pemakaianakhir', $data['pemakaianakhir']);
-					$this->db->bind('id', $data['id']);
-
-					$this->db->execute();
 				}
 			}
 		}
