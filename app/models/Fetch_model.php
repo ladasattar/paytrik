@@ -86,4 +86,31 @@ class Fetch_model {
 			return $data;
 		}
 	}
+
+	public function getLiveSearch()
+	{
+		if (isset($_POST['search'])) {
+			$search = $_POST['search'];
+			$query = "SELECT * FROM tb_pelanggan WHERE nama LIKE '%$search%'";
+			$this->db->query($query);
+			$this->db->execute();
+			$affectedRows = $this->db->rowCount();
+			$row = $this->db->resultSet();
+			$output = '';
+			
+			if (!empty($row)) {
+				foreach ($row as $result) {
+					$output .= '
+						<div class="result-search">'. $result['nometer'] .' - '. $result['nama'] .'</div>
+					';
+				}
+			} else {
+				$output .= '
+					<div class="result-search">Data tidak ditemukan</div>
+				';
+			}
+		}
+
+		return $output;
+	}
 }

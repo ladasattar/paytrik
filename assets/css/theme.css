@@ -655,6 +655,7 @@ section {
     display: -moz-box;
     display: -ms-flexbox;
     display: flex;
+    position: relative;
 }
 
 @media (max-width: 991px) {
@@ -14713,4 +14714,19 @@ input[type=number] {
 .showNotificationQuantity {
     opacity: 1;
     visibility: visible;
+}
+
+/* result search */
+.hasilSearch {
+	position: absolute;
+    top: 45px;
+    width: 100%;
+    background: #FFF;
+    border-radius: 0 0 3px 3px;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.05);
+    transition: .3s ease-in;
+}
+
+.result-search {
+    padding: 20px;
 }

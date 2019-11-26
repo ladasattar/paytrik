@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 25, 2019 at 01:41 PM
+-- Generation Time: Nov 26, 2019 at 02:44 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.4
 
@@ -66,7 +66,7 @@ CREATE TABLE `tb_pelanggan` (
 INSERT INTO `tb_pelanggan` (`kodepelanggan`, `nometer`, `kodetarif`, `nama`, `tlp`, `alamat`) VALUES
 (29, '12345', 1, 'Muqorroba Lada Sattar', '+62895345409970', 'Jalan Tukad Yeh Panan, Blok 19, No. 32\r\nPerumnas Bukit Sanggulan, Kediri'),
 (30, '1454235', 3, 'I Made Atta', '+62895345409970', 'Jalan Tukad Yeh Panan, Blok 19, No. 32\r\nPerumnas Bukit Sanggulan, Kediri'),
-(31, '235236', 1, 'Muqorroba Lada Sattar', '+62895345409970', 'Jalan Tukad Yeh Panan, Blok 19, No. 32\r\nPerumnas Bukit Sanggulan, Kediri');
+(31, '235236', 1, 'Dobleh', '+62895345409970', 'Jalan Tukad Yeh Panan, Blok 19, No. 32\r\nPerumnas Bukit Sanggulan, Kediri');
 
 -- --------------------------------------------------------
 

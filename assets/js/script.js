@@ -162,4 +162,26 @@ $(function () {
 	setInterval(function () {
 		load_unseen_notification();;
 	}, 3000);
+
+	// Search
+	$('#searchBar').on('keyup input', function () {
+		var inputVal = $(this).val();
+		var resultDropdown = $(this).siblings(".result-search");
+		if (inputVal != '') {
+			$('.hasilSearch').show()
+			if (inputVal.length) {
+				$.ajax({
+					url: 'http://localhost/paytrik/admin/liveSearch',
+					method: 'POST',
+					data: { search: inputVal },
+					dataType: 'json',
+					success: function (data) {
+						$('.hasilSearch').html(data);
+					}
+				})
+			}
+		} else {
+			$('.hasilSearch').hide();
+		}
+	})
 })

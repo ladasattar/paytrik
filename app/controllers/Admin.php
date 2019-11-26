@@ -29,4 +29,9 @@ class Admin extends Controller {
 	{
 		echo json_encode($this->model('Fetch_model')->getNotification($_POST['view']));
 	}
+
+	public function liveSearch()
+	{
+		echo json_encode($this->model('Fetch_model')->getLiveSearch($_POST['search']));
+	}
 }
